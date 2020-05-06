@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e6cb0966e9ed23ed311c3b28a6d93d3a0121abbf1573c86b4041f04cc85b876e
-size 1138
+using UnityEngine;
+using UnityEngine.PostProcessing;
+
+namespace UnityEditor.PostProcessing
+{
+    [CustomPropertyDrawer(typeof(UnityEngine.PostProcessing.MinAttribute))]
+    sealed class MinDrawer : PropertyDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            UnityEngine.PostProcessing.MinAttribute attribute = (UnityEngine.PostProcessing.MinAttribute)base.attribute;
+
+            if (property.propertyType == SerializedPropertyType.Integer)
+            {
+                int v = EditorGUI.IntField(position, label, property.intValue);
+                property.intValue = (int)Mathf.Max(v, attribute.min);
+            }
+            else if (property.propertyType == SerializedPropertyType.Float)
+            {
+                float v = EditorGUI.FloatField(position, label, property.floatValue);
+                property.floatValue = Mathf.Max(v, attribute.min);
+            }
+            else
+            {
+                EditorGUI.LabelField(position, label.text, "Use Min with float or int.");
+            }
+        }
+    }
+}

@@ -1,3 +1,123 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e625f374f00232347d7f354111651d87a7f28dc94f18e5a39a3e297636a51038
-size 3308
+﻿
+// =================================	
+// Namespaces.
+// =================================
+
+using UnityEngine;
+
+// =================================	
+// Define namespace.
+// =================================
+
+namespace MirzaBeig
+{
+
+    namespace ParticleSystems
+    {
+
+        namespace Demos
+        {
+
+            // =================================	
+            // Classes.
+            // =================================
+
+            public class LoopingParticleSystemsManager : ParticleManager
+            {
+                // =================================	
+                // Nested classes and structures.
+                // =================================
+
+                // ...
+
+                // =================================	
+                // Variables.
+                // =================================
+
+                // ...
+
+                // =================================	
+                // Functions.
+                // =================================
+
+                // ...
+
+                protected override void Awake()
+                {
+                    base.Awake();
+                }
+
+                // ...
+
+                protected override void Start()
+                {
+                    base.Start();
+
+                    // ...
+
+                    particlePrefabs[currentParticlePrefabIndex][0].gameObject.SetActive(true);
+                }
+
+                // ...
+
+                public override void Next()
+                {
+                    particlePrefabs[currentParticlePrefabIndex][0].gameObject.SetActive(false);
+
+                    base.Next();
+                    particlePrefabs[currentParticlePrefabIndex][0].gameObject.SetActive(true);
+                }
+                public override void Previous()
+                {
+                    particlePrefabs[currentParticlePrefabIndex][0].gameObject.SetActive(false);
+
+                    base.Previous();
+                    particlePrefabs[currentParticlePrefabIndex][0].gameObject.SetActive(true);
+                }
+
+                // ...
+
+                protected override void Update()
+                {
+                    base.Update();
+                }
+
+                // ...
+
+                public override int GetParticleCount()
+                {
+                    // Return particle count from active prefab.
+
+                    int particleCount = 0;
+
+                    ParticleSystem[] currentPrefab = particlePrefabs[currentParticlePrefabIndex];
+
+                    for (int i = 0; i < currentPrefab.Length; i++)
+                    {
+                        particleCount += currentPrefab[i].particleCount;
+                    }
+
+                    return particleCount;
+                }
+
+                // =================================	
+                // End functions.
+                // =================================
+
+            }
+
+            // =================================	
+            // End namespace.
+            // =================================
+
+        }
+
+    }
+
+}
+
+// =================================
+
+// =================================	
+// --END-- //
+// =================================

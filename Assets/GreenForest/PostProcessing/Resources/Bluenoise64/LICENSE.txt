@@ -1,3 +1,9 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0076a6fd33d302cc919b9a278b518e1d0685b2003b2b024352a56483a778f61e
-size 401
+To the extent possible under law, Christoph Peters has waived all copyright and 
+related or neighboring rights to the files in this directory and its 
+subdirectories. This work is published from: Germany. 
+
+The work is made available under the terms of the Creative Commons CC0 Public 
+Domain Dedication.
+
+For more information please visit:
+https://creativecommons.org/publicdomain/zero/1.0/

@@ -1,3 +1,98 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:4bf3b8a18d60ec58e4af01ea62048b188fab86652b6e51cf86b4774cc2846a2c
-size 2422
+﻿
+// =================================	
+// Namespaces.
+// =================================
+
+using UnityEngine;
+
+// =================================	
+// Define namespace.
+// =================================
+
+namespace MirzaBeig
+{
+
+    namespace ParticleSystems
+    {
+
+        namespace Demos
+        {
+
+            // =================================	
+            // Classes.
+            // =================================
+            
+            public class FPSTest : MonoBehaviour
+            {
+                // =================================	
+                // Nested classes and structures.
+                // =================================
+
+                // ...
+
+                // =================================	
+                // Variables.
+                // =================================
+
+                // ...
+
+                public int targetFPS1 = 60;
+                public int targetFPS2 = 10;
+
+                int previousVSyncCount;
+
+                // =================================	
+                // Functions.
+                // =================================
+
+                // ...
+
+                void Awake()
+                {
+
+                }
+
+                // ...
+
+                void Start()
+                {
+
+                }
+
+                // ...
+
+                void Update()
+                {
+                    if (Input.GetKey(KeyCode.Space))
+                    {
+                        Application.targetFrameRate = targetFPS2;
+
+                        previousVSyncCount = QualitySettings.vSyncCount;
+                        QualitySettings.vSyncCount = 0;
+                    }
+                    else if (Input.GetKeyUp(KeyCode.Space))
+                    {
+                        Application.targetFrameRate = targetFPS1;
+                        QualitySettings.vSyncCount = previousVSyncCount;
+                    }
+                }
+
+                // =================================	
+                // End functions.
+                // =================================
+
+            }
+
+            // =================================	
+            // End namespace.
+            // =================================
+
+        }
+
+    }
+
+}
+
+// =================================	
+// --END-- //
+// =================================
