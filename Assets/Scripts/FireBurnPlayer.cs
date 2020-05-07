@@ -1,20 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class BurnPlayer : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    void OnParticleCollision(GameObject target)
-    {
-        if (target.tag == "Player")
-        {
-            Debug.Log("Player took damage");
-        }
-    }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:65046e691f9984c888ee8a544cea0b0b855410bdaa04a8efac24a77d31a06de4
+size 404
